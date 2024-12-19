@@ -70,8 +70,7 @@ class Program
             }
             else if (Char.IsLetter(Response[0]) && Char.IsDigit(Response[1]))
             {
-                Console.WriteLine("Test Passed!");
-                return;
+
             }
             else
             {
@@ -80,6 +79,10 @@ class Program
         }
     }
 
-    
+    //Generates heatmap based on piece placement
+    static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
+    {
+
+    }     
 
 }
