@@ -70,7 +70,18 @@ class Program
             }
             else if (Char.IsLetter(Response[0]) && Char.IsDigit(Response[1]))
             {
-
+                if (((int)Response[0] > 43 || (int)Response[0] < 41) || ((int)Response[1] > 3 || (int)Response[1] > 3))
+                {
+                    Console.WriteLine("That is not a space.");
+                }
+                else if (PlaceVals[Response] == -1)
+                {
+                    Console.WriteLine("That space is taken.");
+                }
+                else
+                {
+                    
+                }
             }
             else
             {
