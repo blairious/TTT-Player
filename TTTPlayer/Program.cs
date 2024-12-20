@@ -93,7 +93,7 @@ class Program
     //Generates heatmap based on piece placement
     static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
     {
-
+        
     }     
 
 }
