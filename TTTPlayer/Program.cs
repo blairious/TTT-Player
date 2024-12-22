@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 class Program
 {
+    Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
+    Dictionary<string, string> Pl = new Dictionary<string, string>();
     static void Main()
     {
         //Set win condition variable and dictionary of space values.
         bool Wins = false;
-        Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
-        Dictionary<string, string> Pl = new Dictionary<string, string>();
 
         for (int i = 1; i < 4; i++)
         {
