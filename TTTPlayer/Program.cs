@@ -101,7 +101,17 @@
         {
             for (int r = -1; r < 2; r++)
             {
-                
+                try
+                {
+                    if (PlaceVals[$"{(char)((int)col + c)}{row + r}"] != -1)
+                    {
+                        PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 1;
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
             }
         }
 
