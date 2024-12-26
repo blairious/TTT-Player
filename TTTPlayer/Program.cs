@@ -20,6 +20,7 @@
         //Center square is given higher initial value.
 
         PlaceVals["B2"] = 3;
+        MoveCalc(PlaceVals, "B2");
 
         //Game Starting Conditions.
         Console.WriteLine("Who goes first?");
@@ -69,7 +70,7 @@
             }
             else if (Char.IsLetter(Response[0]) && Char.IsDigit(Response[1]))
             {
-                if (((int)Response[0] > 67 || (int)Response[0] < 65) || ((int)Response[1] > 3 || (int)Response[1] > 3))
+                if (((int)Response[0] > 67 || (int)Response[0] < 65) || ((int)Response[1] < 49 || (int)Response[1] > 51))
                 {
                     Console.WriteLine("That is not a space.");
                 }
@@ -79,13 +80,27 @@
                 }
                 else
                 {
+                    PlaceVals[Response] = -1;
+                    Pl[Response] = " X";
                     MoveCalc(PlaceVals, Response);
+
+                    //Comp makes move based on heatmap.
+
+                    var MaxSpace = PlaceVals.MaxBy(kvp => kvp.Value);
+                    var SP = MaxSpace.Key;
+                    if (PlaceVals[SP] != -1)
+                    {
+                        PlaceVals[SP] = -1;
+                        Pl[SP] = " O";
+                        MoveCalc(PlaceVals, SP);
+                    }
                 }
             }
             else
             {
                 Console.WriteLine("Invalid move.");
             }
+
         }
     }
 
@@ -94,7 +109,7 @@
     {
 
         char col = Response[0];
-        int row = Response[1];
+        int row = Response[1] - 48;
 
     //Update adjacent space values.
         for (int c = -1; c < 2; c++)
@@ -116,7 +131,7 @@
         }
 
 
-    //Check for spaces that are adjacent to two taken spaces.
+    //TODO Check for spaces that are adjacent to two taken spaces.
 
     }  
 
