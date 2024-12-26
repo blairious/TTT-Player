@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-class Program
+﻿class Program
 {
     static Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
     static Dictionary<string, string> Pl = new Dictionary<string, string>();
@@ -96,8 +93,13 @@ class Program
     static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
     {
 
+        char col = Response[0];
+        int row = Response[1];
+
     //Update adjacent space values.
-    
+
+
+
     //Check for spaces that are adjacent to two taken spaces.
 
     }  
