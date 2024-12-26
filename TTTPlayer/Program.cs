@@ -59,6 +59,9 @@ class Program
             Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}"); ;
             Console.WriteLine("Your move:");
             Response = Console.ReadLine();
+        
+        //Checks player response and move posibility. 
+
             if (Response == "exit")
             {
                 return;
@@ -79,7 +82,7 @@ class Program
                 }
                 else
                 {
-
+                    MoveCalc(PlaceVals, Response);
                 }
             }
             else
@@ -89,7 +92,7 @@ class Program
         }
     }
 
-    //Generates heatmap based on piece placement
+    //Generates heatmap of space value based on current piece placement.
     static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
     {
         
