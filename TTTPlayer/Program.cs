@@ -95,8 +95,11 @@ class Program
     //Generates heatmap of space value based on current piece placement.
     static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
     {
-        
-    }     
+
+    //Update adjacent space values.
+    //Check for spaces that are adjacent to two taken spaces.
+
+    }  
 
 }
 
