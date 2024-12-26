@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 class Program
 {
-    Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
-    Dictionary<string, string> Pl = new Dictionary<string, string>();
+    static Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
+    static Dictionary<string, string> Pl = new Dictionary<string, string>();
     static void Main()
     {
         //Set win condition variable and dictionary of space values.
