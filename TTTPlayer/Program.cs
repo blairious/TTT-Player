@@ -97,7 +97,13 @@
         int row = Response[1];
 
     //Update adjacent space values.
-
+        for (int c = -1; c < 2; c++)
+        {
+            for (int r = -1; r < 2; r++)
+            {
+                
+            }
+        }
 
 
     //Check for spaces that are adjacent to two taken spaces.
