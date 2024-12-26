@@ -97,6 +97,7 @@ class Program
     {
 
     //Update adjacent space values.
+    
     //Check for spaces that are adjacent to two taken spaces.
 
     }  
