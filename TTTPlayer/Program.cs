@@ -83,6 +83,10 @@
                     PlaceVals[Response] = -1;
                     Pl[Response] = " X";
                     MoveCalc(PlaceVals, Response);
+                    //Check for win state.
+
+                    if (HasWon() == true)
+                        break;
 
                     //Comp makes move based on heatmap.
 
@@ -132,7 +136,12 @@
         
     //TODO Check for spaces that are adjacent to two taken spaces.
 
-    }  
+    }
+
+    static bool HasWon()
+    {
+        return false;
+    } 
 
 }
 
