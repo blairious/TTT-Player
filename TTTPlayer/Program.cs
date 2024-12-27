@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Runtime.Serialization;
+
+class Program
 {
     static Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
     static Dictionary<string, string> Pl = new Dictionary<string, string>();
@@ -85,8 +87,11 @@
                     MoveCalc(PlaceVals, Response);
                     //Check for win state.
 
-                    if (HasWon() == true)
-                        break;
+                    if (HasWon() == 1)
+                    {
+                        Console.WriteLine("You have won... Well done.");
+                        return;
+                    }
 
                     //Comp makes move based on heatmap.
 
@@ -97,6 +102,11 @@
                         PlaceVals[SP] = -1;
                         Pl[SP] = " O";
                         MoveCalc(PlaceVals, SP);
+                    }
+                    if (HasWon() == 2)
+                    {
+                        Console.WriteLine("I have won. Thanks for playing.");
+                        return;
                     }
                 }
             }
@@ -138,9 +148,42 @@
 
     }
 
-    static bool HasWon()
+    static int HasWon()
     {
-        return false;
+        int XCounter = 0;
+        int OCounter = 0;
+
+        //Check Cols
+        for (int i = 1; i < 4; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (Pl[$"{(char)(65 + j)}{i}"] == " X")
+                {
+                    XCounter++;
+                }
+                else if (Pl[$"{(char)(65 + j)}{i}"] == " O")
+                {
+                    OCounter++;
+                }
+            }
+            if (XCounter >= 3)
+            {
+                return 1;
+            }
+            else if (OCounter >= 3)
+            {
+                return 2;
+            }
+            else
+            {
+                XCounter = 0;
+                OCounter = 0;
+            }
+        }
+
+        
+        return 0;
     } 
 
 }
