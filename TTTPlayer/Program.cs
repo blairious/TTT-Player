@@ -153,7 +153,8 @@ class Program
         int XCounter = 0;
         int OCounter = 0;
 
-        //Check Cols
+//Check Cols
+
         for (int i = 1; i < 4; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -182,6 +183,65 @@ class Program
             }
         }
 
+//Check Diag
+
+        for (int i = 1; i < 4; i++)
+        {
+
+            if (Pl[$"{(char)(64 + i)}{i}"] == " X")
+            {
+                XCounter++;
+            }
+            else if (Pl[$"{(char)(64 + i)}{i}"] == " O")
+            {
+                OCounter++;
+            }
+        }
+        if (XCounter >= 3)
+        {
+            return 1;
+        }
+        else if (OCounter >= 3)
+        {
+            return 2;
+        }
+        else
+        {
+            XCounter = 0;
+            OCounter = 0;
+        }
+
+//Diag Check 2
+
+        int j = 0; 
+        for (int i = 1; i < 4; i++)
+        {
+            if (Pl[$"{(char)(67 - j)}{i}"] == " X")
+            {
+                XCounter++;
+            }
+            else if (Pl[$"{(char)(67 - j)}{i}"] == " O")
+            {
+                OCounter++;
+            }
+            j++;
+        }
+        if (XCounter >= 3)
+        {
+            return 1;
+        }
+        else if (OCounter >= 3)
+        {
+            return 2;
+        }
+        else
+        {
+            XCounter = 0;
+            OCounter = 0;
+        }
+
+//Check Rows
+        
         
         return 0;
     } 
