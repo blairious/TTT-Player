@@ -175,7 +175,7 @@ class Program
         }
         
     //TODO Check for spaces that are adjacent to two taken spaces.
-
+        
     }
 
     static int HasWon()
