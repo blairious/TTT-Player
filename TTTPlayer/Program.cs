@@ -58,7 +58,7 @@ class Program
             Console.WriteLine("--------------");
             Console.WriteLine($"{Pl["B1"]} | {Pl["B2"]} | {Pl["B3"]}");
             Console.WriteLine("--------------");
-            Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}"); ;
+            Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}");
             Console.WriteLine("Your move:");
             Response = Console.ReadLine();
         
@@ -91,6 +91,11 @@ class Program
 
                     if (HasWon() == 1)
                     {
+                        Console.WriteLine($"{Pl["A1"]} | {Pl["A2"]} | {Pl["A3"]}");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"{Pl["B1"]} | {Pl["B2"]} | {Pl["B3"]}");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}");
                         Console.WriteLine("You have won... Well done.");
                         return;
                     }
@@ -112,6 +117,11 @@ class Program
                     }
                     if (HasWon() == 2)
                     {
+                        Console.WriteLine($"{Pl["A1"]} | {Pl["A2"]} | {Pl["A3"]}");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"{Pl["B1"]} | {Pl["B2"]} | {Pl["B3"]}");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}");
                         Console.WriteLine("I have won. Thanks for playing.");
                         return;
                     }
@@ -129,6 +139,11 @@ class Program
             }
 
         }
+        Console.WriteLine($"{Pl["A1"]} | {Pl["A2"]} | {Pl["A3"]}");
+        Console.WriteLine("--------------");
+        Console.WriteLine($"{Pl["B1"]} | {Pl["B2"]} | {Pl["B3"]}");
+        Console.WriteLine("--------------");
+        Console.WriteLine($"{Pl["C1"]} | {Pl["C2"]} | {Pl["C3"]}");
         Console.WriteLine("Tie.");
         return;
     }
