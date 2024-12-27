@@ -8,6 +8,7 @@ class Program
     {
         //Set win condition variable and dictionary of space values.
         bool Wins = false;
+        int MoveCounter = 0;
 
         for (int i = 1; i < 4; i++)
         {
@@ -36,6 +37,7 @@ class Program
                 PlaceVals["B2"] = -1;
                 Pl["B2"] = " O";
                 StartCon = true;
+                MoveCounter++;
             }
             else if (Response == "Me" || Response == "me")
             {
@@ -92,7 +94,12 @@ class Program
                         Console.WriteLine("You have won... Well done.");
                         return;
                     }
-
+                    MoveCounter++;
+                    if (MoveCounter >= 9)
+                    {
+                        Wins = true;
+                        break;
+                    }
                     //Comp makes move based on heatmap.
 
                     var MaxSpace = PlaceVals.MaxBy(kvp => kvp.Value);
@@ -108,6 +115,12 @@ class Program
                         Console.WriteLine("I have won. Thanks for playing.");
                         return;
                     }
+                    MoveCounter++;
+                    if (MoveCounter >= 9)
+                    {
+                        Wins = true;
+                        break;
+                    }
                 }
             }
             else
@@ -116,6 +129,8 @@ class Program
             }
 
         }
+        Console.WriteLine("Tie.");
+        return;
     }
 
     //Generates heatmap of space value based on current piece placement.
@@ -213,18 +228,18 @@ class Program
 
 //Diag Check 2
 
-        int j = 0; 
+        int p = 0; 
         for (int i = 1; i < 4; i++)
         {
-            if (Pl[$"{(char)(67 - j)}{i}"] == " X")
+            if (Pl[$"{(char)(67 - p)}{i}"] == " X")
             {
                 XCounter++;
             }
-            else if (Pl[$"{(char)(67 - j)}{i}"] == " O")
+            else if (Pl[$"{(char)(67 - p)}{i}"] == " O")
             {
                 OCounter++;
             }
-            j++;
+            p++;
         }
         if (XCounter >= 3)
         {
@@ -241,10 +256,35 @@ class Program
         }
 
 //Check Rows
-        
+        for (int i = 0; i < 3; i++)
+        {
+            for (int h = 1; h < 4; h++)
+            {
+                if (Pl[$"{(char)(65 + i)}{h}"] == " X")
+                {
+                    XCounter++;
+                }
+                else if (Pl[$"{(char)(65 + i)}{h}"] == " O")
+                {
+                    OCounter++;
+                }
+            }
+            if (XCounter >= 3)
+            {
+                return 1;
+            }
+            else if (OCounter >= 3)
+            {
+                return 2;
+            }
+            else
+            {
+                XCounter = 0;
+                OCounter = 0;
+            }
+        }  
         
         return 0;
     } 
-
 }
 
