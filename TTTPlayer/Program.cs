@@ -22,8 +22,8 @@ class Program
 
         //Center square is given higher initial value.
 
-        PlaceVals["B2"] = 3;
-        MoveCalc(PlaceVals, "B2");
+        //PlaceVals["B2"] = 3;
+        
 
         //Game Starting Conditions.
         Console.WriteLine("Who goes first?");
@@ -36,6 +36,7 @@ class Program
                 Console.WriteLine("Very well. I go B2");
                 PlaceVals["B2"] = -1;
                 Pl["B2"] = " O";
+                MoveCalc(" O", "B2");
                 StartCon = true;
                 MoveCounter++;
             }
@@ -86,7 +87,7 @@ class Program
                 {
                     PlaceVals[Response] = -1;
                     Pl[Response] = " X";
-                    MoveCalc(PlaceVals, Response);
+                    MoveCalc(" X", Response);
                     //Check for win state.
 
                     if (HasWon() == 1)
@@ -113,7 +114,7 @@ class Program
                     {
                         PlaceVals[SP] = -1;
                         Pl[SP] = " O";
-                        MoveCalc(PlaceVals, SP);
+                        MoveCalc(" O", SP);
                     }
                     if (HasWon() == 2)
                     {
@@ -149,7 +150,7 @@ class Program
     }
 
     //Generates heatmap of space value based on current piece placement.
-    static void MoveCalc(Dictionary<string, int> PlaceVals, string Response)
+    static void MoveCalc(string Piece, string Response)
     {
 
         char col = Response[0];
@@ -166,6 +167,15 @@ class Program
                     if (PlaceVals[$"{(char)((int)col + c)}{row + r}"] != -1)
                     {
                         PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 1;
+                        //Check for spaces that are adjacent to two taken spaces.
+                        if (Pl[$"{(char)((int)col - c)}{row - r}"] == Piece)
+                        {
+                            PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 4;
+                        }
+                    }
+                    else
+                    {
+                        
                     }
                 }
                 catch
@@ -175,7 +185,7 @@ class Program
             }
         }
         
-    //TODO Check for spaces that are adjacent to two taken spaces.
+    
 
     }
 
