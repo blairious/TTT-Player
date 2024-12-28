@@ -176,7 +176,8 @@ class Program
 
                     if (Pl[$"{(char)((int)col + c)}{row + r}"] == Piece && !(c == 0 && r == 0))
                     {
-                        PlaceVals[$"{(char)((int)col + (c * 2))}{row + (r * 2)}"] += 10;
+                        if (PlaceVals[$"{(char)((int)col + (c * 2))}{row + (r * 2)}"] != -1)
+                            PlaceVals[$"{(char)((int)col + (c * 2))}{row + (r * 2)}"] += 10;
                     }
                 }
                 catch
