@@ -156,6 +156,7 @@ class Program
         int row = Response[1] - 48;
 
     //Update adjacent space values.
+
         for (int c = -1; c < 2; c++)
         {
             for (int r = -1; r < 2; r++)
@@ -175,7 +176,7 @@ class Program
         }
         
     //TODO Check for spaces that are adjacent to two taken spaces.
-        
+
     }
 
     static int HasWon()
