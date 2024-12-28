@@ -22,7 +22,7 @@ class Program
 
         //Center square is given higher initial value.
 
-        //PlaceVals["B2"] = 3;
+        PlaceVals["B2"] = 3;
         
 
         //Game Starting Conditions.
@@ -167,15 +167,16 @@ class Program
                     if (PlaceVals[$"{(char)((int)col + c)}{row + r}"] != -1)
                     {
                         PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 1;
-                        //Check for spaces that are adjacent to two taken spaces.
+                    //Check for spaces that are adjacent to two taken spaces.
                         if (Pl[$"{(char)((int)col - c)}{row - r}"] == Piece)
                         {
-                            PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 4;
+                            PlaceVals[$"{(char)((int)col + c)}{row + r}"] += 10;
                         }
                     }
-                    else
+
+                    if (Pl[$"{(char)((int)col + c)}{row + r}"] == Piece && !(c == 0 && r == 0))
                     {
-                        
+                        PlaceVals[$"{(char)((int)col + (c * 2))}{row + (r * 2)}"] += 10;
                     }
                 }
                 catch
@@ -184,11 +185,7 @@ class Program
                 }
             }
         }
-        
-    
-
     }
-
     static int HasWon()
     {
         int XCounter = 0;
