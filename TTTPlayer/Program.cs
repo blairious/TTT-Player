@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-class Program
+﻿class Program
 {
     static Dictionary<string, int> PlaceVals = new Dictionary<string, int>();
     static Dictionary<string, string> Pl = new Dictionary<string, string>();
