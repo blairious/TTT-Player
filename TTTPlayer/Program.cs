@@ -294,6 +294,8 @@ class Program
         
         return 0;
     }
+
+    //Displays current state of the board.
     static void BoardDisplay()
     {
         Console.WriteLine($"{Pl["A1"]} | {Pl["A2"]} | {Pl["A3"]}");
