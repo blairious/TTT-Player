@@ -4,7 +4,7 @@ Created in C# by Blair Palmerlee
 
 ## Overview
 
-TTT Player is a console based application built as an excercise in simple computer strategy. This runs in the terminal of Linux, Mac, or Windows computers. 
+TTT Player is a console based application built as an excercise in simple computer strategy. This runs in the terminal of Linux computers. 
 
 In this terminal-based game, the player is prompted to either place their piece first or second. Play then commenses on a Tic Tac Toe board where columns are numbered 1-3 and rows are lettered A-B.
 
@@ -25,6 +25,4 @@ To run this program:
 
 3. Run TTTPlayer using your systems equivolent run command: 
 
-'./TTTPlayer' - Linux
-
-'.\TTTPlayer' - Windows
+'./TTTPlayer'
