@@ -6,7 +6,7 @@ Created in C# by Blair Palmerlee
 
 TTT Player is a console based application built as an excercise in simple computer strategy. This runs in the terminal of Windows computers. 
 
-In this terminal-based game, the player is prompted to either place their piece first or second. Play then commenses on a Tic Tac Toe board where columns are numbered 1-3 and rows are lettered A-B.
+In this terminal-based game, the player is prompted to either place their piece first or second. Play then commenses on a Tic Tac Toe board where rows are numbered 1-3 and columns are lettered A-B.
 
 Play ends with a win, lose, or tie. 
 
