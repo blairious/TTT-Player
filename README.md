@@ -12,4 +12,4 @@ Play ends with a win, lose, or tie.
 
 ## Computer choices
 
-The computer player choices are made based on a virtual heatmap generated every time a move is made. Based on proximity to taken spaces and if a space would trigger a win or loss, the program add value to spaces. When the computer takes its turn it selects the highest value space on the board.
+The computer player choices are made based on a virtual heatmap generated every time a move is made. Based on proximity to taken spaces and if a space would trigger a win or loss, the program adds value to spaces. When the computer takes its turn it selects the highest value space on the board.
